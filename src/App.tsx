@@ -9,12 +9,6 @@ import { NotFound } from './pages/NotFound';
 
 import './App.scss';
 
-const tabs = [
-  { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
-  { id: 'tab-2', title: 'Tab 2', content: 'Some text 2' },
-  { id: 'tab-3', title: 'Tab 3', content: 'Some text 3' },
-];
-
 export const App = () => {
   const getClassName = ({ isActive }: { isActive: boolean }) =>
     cn('navbar-item', { 'is-active': isActive });
@@ -44,9 +38,9 @@ export const App = () => {
             <Route path="home" element={<Navigate to="/" replace />} />
 
             <Route path="tabs">
-              <Route index element={<Tabs tabs={tabs} />} />
+              <Route index element={<Tabs />} />
 
-              <Route path=":tabId" element={<Tabs tabs={tabs} />} />
+              <Route path=":tabId" element={<Tabs />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
